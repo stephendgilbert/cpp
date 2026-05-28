@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='../../cs150.css' rel='stylesheet' media='all'>
+    <link href='../../prism.css' rel='stylesheet'>
+    <script src='../../prism.js'></script>
+    <title>Using the Conversion Functions</title>
+</head>
+<body>
+<div id='page'>
+<div>
+   <h1>Using the Conversion Functions</h1>
+   <a target='_blank'
+      href='https://cs50.dev'>
+      <img src='../images/running-man.png' class='right'
+        alt='Decorative running man for link to cs50.dev.'>
+  </a>
+  <p class='firstLine'>Your goal is to be able to compile 
+      <mark>exactly the same file</mark> in C++98, C++11,
+      C++14 and C++17, and to <mark>get the same results each time</mark>. 
+      Click the "running-man" icon on the right and log into <b>VSCode</b>. 
+  </p>
+  <p> Use the following commands to upload and open the project for this lesson:</p>
+  <div class='consoleDisplay width-80'>$ wget https://occ-cs.com/conversions.zip<br/>
+  $ unzip conversions.zip<br />
+  $ cd conversions<br />
+  conversions/ $ code conversions.cpp
+  </div>
+  <p> Now, while still in the shell, type 
+      <tt class='y'>$ make 17</tt>. You'll see that the program compiles 
+      and runs (although it terminates
+      with an error when trying to convert "UB-40".)
+      <img src='../images/conversions-1.png' class='inlineCenter round shadow'
+        alt='Running the program using C++17 in the shell.'>
+  </p>
+  <p>Now, type <tt class='y'>make 98</tt> in the Shell. This will 
+      compile your program with <mark> C++98</mark>.
+      <img src='../images/conversions-2.png' class='inlineCenter round shadow'
+        alt='Attempting to compile the program using C++98 in the shell.'>
+  </p>
+  <p align="center" style='font-size:larger;color:red;'>
+      <strong>OOPS! That doesn't look encouraging! What's wrong???</strong>
+  </p>
+  <p> C++98 does not have those functions, so you get an
+      <mark>undeclared identifier</mark>. You can fix that by
+      <mark>implementing these two functions</mark>
+      yourself, using the string stream classes.
+  </p>
+  
+  
+  
+    
+</div>
+<div id='footer'>
+<p><img src='https://du11hjcvx0uqb.cloudfront.net/dist/images/cc/cc_by_nc-1d2b7301ee.png'
+      class='left'
+    alt='CC-Attribution-No Commercial icon.'>
+    This course content is offered under a 
+    <a target='_blank' href='https://creativecommons.org/licenses/by-nc/4.0'>CC
+      Attribution Non-Commercial</a> license. Content in this course
+      can be considered under this license unless otherwise noted.
+</p>
+</div>
+</div>
+</body>
+    <script src='../../receiveMessage.js'></script>
+</html>

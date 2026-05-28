@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='../../cs150.css' rel='stylesheet' media='all'>
+    <link href='../../prism.css' rel='stylesheet'>
+    <script src='../../prism.js'></script>
+    <title>What Should You Throw?</title>
+</head>
+<body>
+<div id='page'>
+<div>
+   <h1>What Should You Throw?</h1>
+  <p class='firstLine'>Unlike Java, in C++, it is legal to    
+      <mark>throw any kind of object</mark>, not just members
+      of an exception class hierarchy. So, in C++, all of
+      these are legal:
+  </p>
+<pre class='language-cpp'><code>if (len &lt; 3) throw "Too short"s; // throw a string
+if (a &gt; b) throw 42;    // throw an integer error code
+if (b &lt; c) throw 3.5;   // throw a double</code></pre>
+      <a target='_blank' href='../images/exceptions.png'>
+      <img src='../images/exceptions.png' class='right width-30 round shadow'
+        alt='The C++ standard library exception classes.'></a>
+  <p>The question is, though, what <mark>should</mark> <tt>stoi()</tt>
+    throw when an error occurs? The
+      <a target='_blank' 
+        href="https://en.cppreference.com/w/cpp/string/basic_string/stol">
+          library documentation
+      </a>says that the function throws <b>two</b> different kinds
+          of exceptions:
+  </p>
+  <ul>
+    <li>An <tt>invalid_argument</tt> exception when the argument cannot
+        be converted to an int.
+    </li>
+    <li>An <tt>out_of_range</tt> exception when the converted argument
+        would be too big to fit into an <tt>int</tt>.
+    </li>
+  </ul>The header file, <tt>&lt;stdexcept&gt;</tt> defines 
+      both of these (and several other classes) that let us
+      specify what specific error triggered the exception,
+      similar to the <tt>Exception</tt> class hierarchy from
+      the Java Class Libraries. (Click the image to enlarge it.)
+  </p>
+  <p>Both of these exceptions:
+  </p>
+  <ul>
+    <li>have a constructor which takes a <tt>string</tt> argument, useful for error messages.
+    <li>have a member function <tt>what()</tt> that returns what the error was</li>
+  </ul>
+  <p>Include <tt>&lt;stdexcept&gt;</tt>, and rewrite the <tt>throw</tt> statements like this:
+  </p>
+<pre class='language-cpp'><code>if (in.eof()) 
+    throw out_of_range("str + " is too large for an int.");
+else
+    throw invalid_argument(str + " not an int.");</code>
+</pre>
+  <p>The first check here, <code class='language-cpp'>if (in.eof())...</code>
+     is thrown when all of the string has been converted to integers, but the
+     resulting integer is to large to fit into an <tt>int</tt>.
+      The second is thrown when the string cannot be converted at all.
+  </p>
+</div>
+<div id='footer'>
+<p><img src='https://du11hjcvx0uqb.cloudfront.net/dist/images/cc/cc_by_nc-1d2b7301ee.png'
+      class='left'
+    alt='CC-Attribution-No Commercial icon.'>
+    This course content is offered under a 
+    <a target='_blank' href='https://creativecommons.org/licenses/by-nc/4.0'>CC
+      Attribution Non-Commercial</a> license. Content in this course
+      can be considered under this license unless otherwise noted.
+</p>
+</div>
+</div>
+</body>
+    <script src='../../receiveMessage.js'></script>
+</html>

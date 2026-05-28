@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" 
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer">
+    </script>
+    <script>
+      const urls = ['A/A.html', 'A/B.html', 'A/C.html', 'A/D.html', 'A/E.html', 'A/F.html',
+        'B/A.html', 'B/B.html', 'B/C.html', 'B/D.html', 'B/E.html', 'B/F.html',
+        'C/A.html', 'C/B.html', 'C/C.html', 'C/D.html', 'C/E.html', 'C/F.html',        
+        'D/A.html', 'D/B.html', 'D/C.html', 'D/D.html', 'D/E.html', 'D/F.html',        
+        'E/A.html', 'E/B.html', 'E/C.html', 'E/D.html', 'E/E.html', 'E/F.html',
+        ];
+      var i = 0;
+      $(document).ready(function() {
+        var url = urls[i];
+        $('div#content').load(url);
+      });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Week 1 - Introduction to C++ Syntax, Variables &amp; Calculations</title>
+    <style>
+      #content {
+        max-width:800px;
+        margin:auto;
+      }
+      #nav {
+        text-align: center;
+        margin:auto;
+        font-family: georgia;
+        font-size: small;
+        width: 100%;
+      }
+      #prev {
+        font-size:36px;
+        float:left;
+        margin-left:-1em;
+        color:silver;
+      }
+      #next {
+        font-size:36px;
+        float:right;
+        color:silver;
+      }
+    </style>
+</head>
+<body>
+<div id='nav' style='width:850px;'>
+  <div id='prev'><i class="fa fa-arrow-circle-left"></i></div>
+  <div id='next'><i class="fa fa-arrow-circle-right"></i></div>
+<!--
+  <a href='A.html'>A</a> |
+  <a href='B.html'>B</a> |
+  <a href='C.html'>C</a> |
+  <a href='D.html'>D</a> |
+  <a href='E.html'>E</a> |
+  <a href='F.html'>F</a> |
+-->
+</div>
+<div id='content'>
+</div>
+</div>
+<script>
+$('div#prev').bind('click', function(e) {
+  $('div#next').show();
+  --i;
+  if (i == 0) {
+    $('div#prev').hide();
+  }
+  else
+  {
+    var url = urls[i];
+    $('div#content').load(url); 
+  }
+});
+$('div#next').bind('click', function(e) {
+  $('div#prev').show();
+  ++i;
+  if (i == urls.length) {
+    $('div#next').hide();
+  }
+  else
+  {
+    var url = urls[i];
+    $('div#content').load(url); 
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='../../cs150.css' rel='stylesheet' media='all'>
+    <link href='../../prism.css' rel='stylesheet'>
+    <script src='../../prism.js'></script>
+    <title>The cat Filter</title>
+</head>
+<body>
+<div id='page'>
+<div>
+   <h1>The <em>cat</em> Filter</h1>
+   <a href='https://cs50.dev/' target='_blank'>
+    <img src='../images/running-man.png' class='right' alt='Decorative running-man icon.'></a>
+   <p class='firstLine'>To learn about text filters, first click the "running man" 
+      icon to log into your online version of VSCode. 
+  </p>
+  <p> Once you're logged in,
+      type the following commands in the shell to upload the starter code
+      for this lesson. (Type the portion that appears <mark>after</mark>
+      prompt <tt>$</tt>, and make sure you
+      press <tt>ENTER</tt> afer typing each line.)
+  </p>
+  <div class='consoleDisplay width-80'>$ wget https://occ-cs.com/filters.zip<br/>
+  $ unzip filters.zip<br />
+  $ cd filters<br />
+  filters/ $ code input.txt moby.txt filter.cpp
+  </div>
+  <p>Now, let's look at the most common built-in filter command.
+      Type the following command in the shell (terminal), and press <tt>ENTER</tt>.
+      (Again, type only the portion that appears <mark>after</mark> the
+      <tt>$</tt> prompt.)
+  </p>
+  <div class='consoleDisplay width-80'>filters/ $ cat</div>
+  <p> The cursor simply blinks; you <strong>don't</strong> get a new prompt. Go
+      ahead and type a few lines of text, pressing <tt>ENTER</tt> at the end of each line.
+      The <mark>input you typed is echoed</mark> on the next line. Press
+      <tt>CTRL+D</tt> to return to the prompt.
+  </p>
+  <ul>
+      <li>Filter programs <strong>read from 
+          standard input</strong> and <strong>write to standard output</strong>.
+      </li>
+      <li>The <tt>cat</tt> filter <strong>con<mark>cat</mark>enates</strong> 
+          each input character to standard output. In Windows, the equivalent 
+          filter is named <tt>type</tt>.
+      </li>
+      <li>The filter <mark>stops</mark> reading when it reaches        
+          <strong>end-of-file</strong>. In Unix, you simulate that by typing
+          <tt>CTRL+D</tt> from the terminal. In Windows, it is <tt>CTRL+Z</tt>.
+      </li>
+  </ul>
+  <p>
+      A filter is <strong>not meant to be run interactively</strong>. Instead, it
+      is meant to <strong>process a stream of data</strong> that is supplied from a
+      file, a network stream or some other source. The easiest way to supply such
+      a stream is to use <strong>input redirection</strong>.
+  </p>
+   
+   
+   
+</div>
+<div id='footer'>
+<p><img src='https://du11hjcvx0uqb.cloudfront.net/dist/images/cc/cc_by_nc-1d2b7301ee.png'
+      class='left'
+    alt='CC-Attribution-No Commercial icon.'>
+    This course content is offered under a 
+    <a target='_blank' href='https://creativecommons.org/licenses/by-nc/4.0'>CC
+      Attribution Non-Commercial</a> license. Content in this course
+      can be considered under this license unless otherwise noted.
+</p>
+</div>
+</div>
+</body>
+    <script src='../../receiveMessage.js'></script>
+</html>
